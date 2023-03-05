@@ -12,7 +12,9 @@
   * `npm run start` or `ng serve`
 
 ## Keycloak Config
-* Update environment.ts and environment.local.ts
+* keycloak-client: Update environment.ts and environment.local.ts
+* keycloak-server: Ensure `issuer-uri` is proper.
+* keycloak-server: Ensure `oauth.client-id` is proper (maybe?).
 
 ## Step-By-Step Deployment
 
