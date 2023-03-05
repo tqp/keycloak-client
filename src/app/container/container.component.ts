@@ -1,18 +1,17 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 import { KeycloakService } from 'keycloak-angular';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-container',
   templateUrl: './container.component.html',
   styleUrls: [ './container.component.scss' ]
 })
-export class ContainerComponent implements OnInit {
+export class ContainerComponent {
+  public env: string = 'Unknown';
 
   constructor(private keycloak: KeycloakService) {
-  }
-
-  ngOnInit(): void {
-    console.log('ContainerComponent');
+    this.env = environment.env;
   }
 
   public logout(): void {

@@ -12,8 +12,8 @@ import { AngularMaterialModule } from '../modules/angular-material.module';
   ],
   imports: [
     CommonModule,
-    PagesRoutingModule,
-    AngularMaterialModule
+    AngularMaterialModule,
+    PagesRoutingModule
   ]
 })
 export class PagesModule {

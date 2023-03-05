@@ -1,4 +1,4 @@
-.example-spacer {
+.spacer {
   flex: 1 1 auto;
 }
 
@@ -6,4 +6,8 @@ label {
   display: inline-block;
   min-width: 10em;
   margin: .25em 0;
+}
+
+.card {
+  margin-bottom: 40px;
 }

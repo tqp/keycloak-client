@@ -1,10 +1,11 @@
-<mat-toolbar>
+<mat-toolbar color="primary">
   <span>Keycloak Client</span>
-  <span class="example-spacer"></span>
+  <span class="spacer"></span>
+  <span>[Env: {{env}}]</span>
   <button mat-icon-button (click)="logout();">
     <mat-icon>logout</mat-icon>
   </button>
 </mat-toolbar>
-<div style="margin: 20px;">
+<div class="container-padding">
   <router-outlet></router-outlet>
 </div>

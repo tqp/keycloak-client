@@ -43,3 +43,4 @@ Thumbs.db
 
 # Custom
 deploy-config/images
+deploy-config/secrets

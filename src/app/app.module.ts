@@ -10,6 +10,7 @@ import { KeycloakAngularModule, KeycloakService } from 'keycloak-angular';
 import { AngularMaterialModule } from './modules/angular-material.module';
 import { ContainerComponent } from './container/container.component';
 import { HashLocationStrategy, LocationStrategy } from '@angular/common';
+import { HttpClientModule } from '@angular/common/http';
 
 function initializeKeycloak(keycloak: KeycloakService) {
   return () => {
@@ -39,6 +40,7 @@ function initializeKeycloak(keycloak: KeycloakService) {
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
+    HttpClientModule,
     KeycloakAngularModule,
     AngularMaterialModule
   ],

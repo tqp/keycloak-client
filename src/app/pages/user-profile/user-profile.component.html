@@ -1,8 +1,9 @@
-<mat-card class="example-card" *ngIf="userProfile">
+<mat-card class="card" *ngIf="userProfile">
   <mat-card-header>
     <mat-card-title>User Profile</mat-card-title>
   </mat-card-header>
   <mat-card-content>
+    <mat-divider></mat-divider>
     <div>
       <label>Username:</label>
       {{ userProfile.username }}
@@ -23,10 +24,41 @@
       <label>Email Verified:</label>
       {{userProfile.emailVerified ? 'Yes' : 'No'}}
     </div>
+    <div>
+      <label>Roles:</label>
+      <span *ngFor="let role of roleListFiltered | slice:0:100; let $first=first; let $last=last;">
+        {{role}}<span *ngIf="!$last">, </span>
+      </span>
+    </div>
     <mat-divider></mat-divider>
   </mat-card-content>
   <mat-card-actions>
-    <span class="example-spacer"></span>
+    <span class="spacer"></span>
     <button mat-raised-button color="primary" (click)="logout();">Logout</button>
   </mat-card-actions>
+</mat-card>
+
+<mat-card class="card" *ngIf="userProfile">
+  <mat-card-header>
+    <mat-card-title>Diagnostics</mat-card-title>
+  </mat-card-header>
+  <mat-card-content>
+    <mat-divider></mat-divider>
+    <div>
+      <label>Open Endpoint:</label>
+      {{ openEndpointResponse?.value | titlecase}}
+    </div>
+    <div>
+      <label>User Endpoint:</label>
+      {{ userEndpointResponse?.value | titlecase}}
+    </div>
+    <div>
+      <label>Manager Endpoint:</label>
+      {{ managerEndpointResponse?.value | titlecase}}
+    </div>
+    <div>
+      <label>Admin Endpoint:</label>
+      {{ adminEndpointResponse?.value | titlecase}}
+    </div>
+  </mat-card-content>
 </mat-card>

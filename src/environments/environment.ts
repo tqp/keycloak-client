@@ -1,4 +1,5 @@
 export const environment = {
-  env: 'unknown',
-  apiUrl: 'http://localhost:5000',
+  env: 'prod',
+  redirectUri: 'https://keycloak-client.timsanalytics.com/#/pages',
+  apiUrl: 'https://keycloak-server.timsanalytics.com'
 };
