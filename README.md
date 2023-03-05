@@ -17,17 +17,25 @@ Preparation and Setup:
 * To deploy directly to the "dist" folder, change `angular.json -> projects -> architect -> build -> options -> outputPath` to:
   * "outputPath": "dist",
 
+On your local machine:
 * Start Docker Desktop
 * Run the build script in package.json.
+  * `npm run build`
 * Run docker-build-image.sh.
+  * `./docker-build-image.sh`
 * Save image to .tar to move to VM (make sure the 'images' directory exists).
   * `docker image save keycloak-client:latest -o deploy-config/images/keycloak-client.tar`
 * Move the image to the AWS
   * `scp -i ./deploy-config/secrets/tims-analytics.pem ./deploy-config/images/keycloak-client.tar ec2-user@ec2-54-146-74-179.compute-1.amazonaws.com:~/.`
+
+Connect to the AWS EC2 Instance:
+* Copy the image from the root directory to the keycloak-client directory.
+  * `cp ~/keycloak-client.tar docker/keycloak-client/`
 * Stop the running Docker container.
+  * `docker-compose down`
 * Remove the previous image.
   * `docker image ls`
-  * `docker image rm <image_id>`
+  * `docker rmi <image_id>`
 * Load the image into Docker
   * `docker image load -i keycloak-client.tar`
 * Update the docker-compose.yml file to reference the proper image version.

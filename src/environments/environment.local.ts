@@ -1,6 +1,5 @@
 export const environment = {
   env: 'local',
-  // redirectUri: 'http://localhost:4200/#/pages',
-  redirectUri: 'https://cnn.com',
+  redirectUri: 'http://localhost:4200/#/pages',
   apiUrl: 'http://localhost:5000'
 };
