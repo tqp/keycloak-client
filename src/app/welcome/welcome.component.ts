@@ -11,7 +11,6 @@ export class WelcomeComponent {
   public env: string = 'Unknown';
 
   constructor(private router: Router) {
-    console.log('env', this.env);
     this.env = environment.env;
   }
 

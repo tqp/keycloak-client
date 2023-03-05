@@ -22,7 +22,8 @@ export class UserProfileComponent implements OnInit {
   private roleBlackList = [
     'offline_access',
     'uma_authorization',
-    'default-roles-tims-analytics'
+    'default-roles-tims-analytics',
+    'default-roles-keycloak-demo'
   ];
 
   constructor(private keycloak: KeycloakService,

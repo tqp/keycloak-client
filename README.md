@@ -11,6 +11,9 @@
 * Run Project
   * `npm run start` or `ng serve`
 
+## Keycloak Config
+* Update environment.ts and environment.local.ts
+
 ## Step-By-Step Deployment
 
 Preparation and Setup:

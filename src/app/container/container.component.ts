@@ -11,7 +11,6 @@ export class ContainerComponent {
   public env: string = 'Unknown';
 
   constructor(private keycloak: KeycloakService) {
-    console.log('env', this.env);
     this.env = environment.env;
   }
 

@@ -17,8 +17,8 @@ function initializeKeycloak(keycloak: KeycloakService) {
     return keycloak.init({
       config: {
         url: 'https://keycloak.timsanalytics.com/',
-        realm: 'tims-analytics',
-        clientId: 'webapp-local'
+        realm: 'keycloak-demo',
+        clientId: 'tqp-keycloak-demo'
       },
       initOptions: {
         onLoad: 'check-sso',
