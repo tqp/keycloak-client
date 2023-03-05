@@ -25,12 +25,12 @@ On your local machine:
   * `./docker-build-image.sh`
 * Save image to .tar to move to VM (make sure the 'images' directory exists).
   * `docker image save keycloak-client:latest -o deploy-config/images/keycloak-client.tar`
-* Move the image to the AWS
-  * `scp -i ./deploy-config/secrets/tims-analytics.pem ./deploy-config/images/keycloak-client.tar ec2-user@ec2-54-146-74-179.compute-1.amazonaws.com:~/.`
+* Copy the image file to the root directory on the AWS EC2 instance:
+  * `scp -i ./deploy-config/secrets/tims-analytics.pem ./deploy-config/images/keycloak-client.tar ec2-user@ec2-54-146-74-179.compute-1.amazonaws.com:~/temp/.`
 
 Connect to the AWS EC2 Instance:
 * Copy the image from the root directory to the keycloak-client directory.
-  * `cp ~/keycloak-client.tar docker/keycloak-client/`
+  * `mv ~/temp/keycloak-client.tar docker/keycloak-client/`
 * Stop the running Docker container.
   * `docker-compose down`
 * Remove the previous image.
@@ -41,3 +41,6 @@ Connect to the AWS EC2 Instance:
 * Update the docker-compose.yml file to reference the proper image version.
 * Start the container using docker-compose:
   * `docker-compose up -d`
+
+To "tail" the log:
+* `docker logs keycloak-client --follow`
